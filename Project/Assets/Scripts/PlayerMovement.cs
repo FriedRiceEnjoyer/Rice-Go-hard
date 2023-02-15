@@ -2,29 +2,45 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float Speed;
-    public float Jump;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    //Movement
+    public float speed;
+    public float jump;
+    float moveVelocity;
 
-    }
+    //Grounded Vars
+    bool isGrounded = true;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.D))
+        //Jumping
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W))
         {
-            transform.Translate(Vector3.right * Speed * Time.deltaTime);
+            if (isGrounded)
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jump);
+                isGrounded = false;
+            }
         }
-        if (Input.GetKey(KeyCode.A))
+
+        moveVelocity = 0;
+
+        //Left Right Movement
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * Speed * Time.deltaTime);
+            moveVelocity = -speed;
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.up * Jump * Time.deltaTime);
+            moveVelocity = speed;
         }
+
+        GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+
+    }
+    //Check if Grounded
+    void OnTriggerEnter2D()
+    {
+        isGrounded = true;
     }
 }
