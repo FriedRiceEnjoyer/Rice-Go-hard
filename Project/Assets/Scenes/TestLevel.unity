@@ -7080,6 +7080,7 @@ GameObject:
   - component: {fileID: 1923509861}
   - component: {fileID: 1923509866}
   - component: {fileID: 1923509865}
+  - component: {fileID: 1923509860}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -7087,6 +7088,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1923509860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923509859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b123dc10818e96c4d81b27a1e82f6657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 3862505144050598291}
+  damage: 2
 --- !u!61 &1923509861
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7214,7 +7229,7 @@ MonoBehaviour:
   target: {fileID: 3862505144050598294}
   activateDistance: 15
   pathUpdateSeconds: 0.5
-  speed: 800
+  speed: 1200
   nextWaypointDistance: 15
   jumpNodeHeightRequirement: 0.2
   jumpModifier: 1
@@ -7661,13 +7676,28 @@ GameObject:
   - component: {fileID: 3862505144050598288}
   - component: {fileID: 3862505144050598289}
   - component: {fileID: 392299392}
+  - component: {fileID: 3862505144050598291}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3862505144050598291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3862505144050598290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429d6e348ebba4f47a311f8e8c4ce712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 10
 --- !u!4 &3862505144050598294
 Transform:
   m_ObjectHideFlags: 0
