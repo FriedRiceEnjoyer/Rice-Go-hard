@@ -39,8 +39,16 @@ public class PlayerMovement : MonoBehaviour
 
     }
     //Check if Grounded
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        isGrounded = true;
+        if (other.gameObject.tag == "Level")
+        {
+            isGrounded = true;
+        }
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            isGrounded = true;
+        }
     }
 }

@@ -19,8 +19,6 @@ public class Shoot : MonoBehaviour
 
     public float DeleteBullet;
 
-    public float BulletAmount;
-
     float ReadyForNextShot;
 
     // Start is called before the first frame update
