@@ -7,6 +7,10 @@ TagManager:
   - Bullet
   - Enemy
   - Level
+  - Item
+  - KillBox
+  - BossRoom
+  - BossItem
   layers:
   - Default
   - TransparentFX

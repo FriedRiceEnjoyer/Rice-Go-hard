@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 4625548712362698408}
   - component: {fileID: 4625548712362698411}
   - component: {fileID: 4625548712362698406}
-  - component: {fileID: -3617071090793616149}
+  - component: {fileID: 2955200165357751520}
+  - component: {fileID: 37084678055793413}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185a8553ac0694e4ba49c4ace2a6b4a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 8160928484882004158, guid: cc881ff677423ed4a9b466f199dce63d, type: 3}
+  target: {fileID: 8627018139082358594, guid: cc881ff677423ed4a9b466f199dce63d, type: 3}
   activateDistance: 15
   pathUpdateSeconds: 0.5
   speed: 1200
@@ -225,9 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b123dc10818e96c4d81b27a1e82f6657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 8160928484882004155, guid: cc881ff677423ed4a9b466f199dce63d, type: 3}
   damage: 2
---- !u!114 &-3617071090793616149
+--- !u!114 &2955200165357751520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,3 +241,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   currentHealth: 0
+--- !u!114 &37084678055793413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4625548712362698401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e042c56d3c5e30e4686d802f68c27d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList:
+  - {fileID: 319776124021468551, guid: 06309c2cd85374941a7a2ebf4f36f9dd, type: 3}
+  - {fileID: 319776124021468551, guid: 14077efdf024af4438c7522b21410554, type: 3}
+  - {fileID: 319776124021468551, guid: 8b8d7dd172c89f04a98e46629d596b61, type: 3}
+  randMin: 0
+  randMax: 101

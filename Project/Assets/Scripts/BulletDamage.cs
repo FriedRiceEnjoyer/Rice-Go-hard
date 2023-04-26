@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    public int bulletDamage;
+
+public float bulletDamage;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,6 +16,11 @@ public class BulletDamage : MonoBehaviour
         }
 
         if (other.gameObject.tag == "Level")
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.tag == "Item")
         {
             Destroy(gameObject);
         }

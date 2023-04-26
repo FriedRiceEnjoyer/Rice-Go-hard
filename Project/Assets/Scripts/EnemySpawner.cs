@@ -3,10 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
+{ 
+    //Spawn this object
+public GameObject spawnObject;
+
+public float maxTime = 5;
+public float minTime = 2;
+
+public float SpawningRange;
+
+//current time
+private float time;
+
+//The time to spawn the object
+private float spawnTime;
+
+void Start()
 {
-    public GameObject EnemyPrefab;
-    public float SpawningRange;
-    float timer = 0f;
+    SetRandomTime();
+    time = minTime;
+}
 
     private Vector3 RandomSpawningPosition()
     {
@@ -18,23 +34,34 @@ public class EnemySpawner : MonoBehaviour
         return spawningPos;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void FixedUpdate()
+{
 
+    //Counts up
+    time += Time.deltaTime;
+
+    //Check if its the right time to spawn the object
+    if (time >= spawnTime)
+    {
+        SpawnObject();
+        SetRandomTime();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (timer <= 3f)
-        {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            timer = 0;
-            Instantiate(EnemyPrefab, RandomSpawningPosition(), transform.rotation);
-        }
-    }
 }
+
+
+//Spawns the object and resets the time
+void SpawnObject()
+{
+    time = minTime;
+        Instantiate(spawnObject, RandomSpawningPosition(), transform.rotation);
+    }
+
+//Sets the random time between minTime and maxTime
+void SetRandomTime()
+{
+    spawnTime = Random.Range(minTime, maxTime);
+}
+ 
+ }
+ 

@@ -10,7 +10,12 @@ public class EnemyDamage : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<EnemyHealth>().damageEnemy(damage);
+            other.gameObject.GetComponent<PlayerHealth>().damagePlayer(damage);
+        }
+
+        if (other.gameObject.tag == "KillBox")
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int health;
-    public int currentHealth;
+    public float health;
+    public float currentHealth;
+    private ItemDrop getItem;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = health;
+        getItem = GetComponent<ItemDrop>();
     }
 
     // Update is called once per frame
@@ -18,11 +20,16 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            if (getItem != null)
+            {
+                getItem.DropItem();
+                Debug.Log("Dropped an Item: " + getItem);
+            }
             Destroy(gameObject);
         }
     }
 
-    public void damageEnemy(int damage)
+    public void damageEnemy(float damage)
     {
         currentHealth -= damage;
     }
