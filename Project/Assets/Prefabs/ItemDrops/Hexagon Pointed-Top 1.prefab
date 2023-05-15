@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 3
-  score: 6
+  score: 3
 --- !u!114 &1515934107490245058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,4 +166,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4befc0d20c5b5419d0c79e091fb618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heal: 3
+  heal: 5

@@ -257,5 +257,3 @@ MonoBehaviour:
   - {fileID: 319776124021468551, guid: 06309c2cd85374941a7a2ebf4f36f9dd, type: 3}
   - {fileID: 319776124021468551, guid: 14077efdf024af4438c7522b21410554, type: 3}
   - {fileID: 319776124021468551, guid: 8b8d7dd172c89f04a98e46629d596b61, type: 3}
-  randMin: 0
-  randMax: 101
